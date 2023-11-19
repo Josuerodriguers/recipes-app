@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoginType } from '../types';
+import style from './Login.module.css';
+import logoImg from '../images/—Pngtree—recipe book vector_12159143.png';
 
 const LOGIN_INITIAL_STATE = {
   email: '',
@@ -41,41 +43,63 @@ function Login() {
   };
 
   return (
-    <form
-      onSubmit={ onSubmit }
-    >
-      <label htmlFor="email">
-        Email
-        <input
-          data-testid="email-input"
-          type="text"
-          id="email"
-          name="email"
-          value={ loginUser.email }
-          onChange={ handleChange }
-        />
-      </label>
+    <div>
 
-      <label htmlFor="password">
-        Senha
-        <input
-          data-testid="password-input"
-          type="password"
-          id="password"
-          name="password"
-          value={ loginUser.password }
-          onChange={ handleChange }
-        />
-      </label>
-
-      <button
-        data-testid="login-submit-btn"
-        disabled={ !validateForm() }
-        type="submit"
+      <form
+        onSubmit={ onSubmit }
       >
-        Enter
-      </button>
-    </form>
+
+        <img
+          className={ style.logo }
+          src={ logoImg }
+          alt="logo"
+        />
+        <div
+          className={ style.title }
+        >
+          APP de Receitas
+        </div>
+
+        <label
+          htmlFor="email"
+        >
+
+          <input
+            className={ style.email }
+            data-testid="email-input"
+            type="text"
+            id="email"
+            name="email"
+            value={ loginUser.email }
+            onChange={ handleChange }
+            placeholder="User"
+          />
+        </label>
+
+        <label htmlFor="password">
+          <input
+            className={ style.senha }
+            data-testid="password-input"
+            type="password"
+            id="password"
+            name="password"
+            value={ loginUser.password }
+            onChange={ handleChange }
+            placeholder="Password"
+          />
+        </label>
+
+        <button
+          className={ style.btn }
+          data-testid="login-submit-btn"
+          disabled={ !validateForm() }
+          type="submit"
+        >
+          Enter
+        </button>
+
+      </form>
+    </div>
   );
 }
 

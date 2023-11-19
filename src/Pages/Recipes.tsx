@@ -91,15 +91,16 @@ function Recipes({ mealOrDrink }: RecipesProps) {
             data-testid={ `${index}-recipe-card` }
             onClick={ () => handleRecipeClick(recipe) }
           >
+            <p data-testid={ `${index}-card-name` }>
+              {mealOrDrink === 'meals' ? recipe.strMeal : recipe.strDrink}
+            </p>
             <img
               src={ mealOrDrink === 'meals'
                 ? recipe.strMealThumb : recipe.strDrinkThumb }
               alt={ mealOrDrink === 'meals' ? recipe.strMeal : recipe.strDrink }
               data-testid={ `${index}-card-img` }
             />
-            <p data-testid={ `${index}-card-name` }>
-              {mealOrDrink === 'meals' ? recipe.strMeal : recipe.strDrink}
-            </p>
+
           </button>
         ))}
       </div>

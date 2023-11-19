@@ -3,7 +3,8 @@ import Header from '../components/Header';
 import Footer from './Footer';
 
 function Profile() {
-  const emailUser = localStorage.getItem('user');
+  const emailUserJSON = localStorage.getItem('user');
+  const emailUser = emailUserJSON ? JSON.parse(emailUserJSON).email : '';
   const navigate = useNavigate();
   const handleClick = () => {
     navigate('/done-recipes');

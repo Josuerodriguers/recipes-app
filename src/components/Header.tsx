@@ -4,6 +4,7 @@ import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
 import SearchBar from './SearchBar';
 import RecipesContext from '../context/contextRecipes';
+import style from './Header.module.css';
 
 type HeaderProp = {
   title: string;
@@ -34,6 +35,7 @@ function Header(props: HeaderProp) {
               onClick={ () => setToggleSearchBar(!toggleSearchBar) }
             >
               <img
+                className={ style.searchIcon }
                 data-testid="search-top-btn"
                 src={ searchIcon }
                 alt="searchIcon"

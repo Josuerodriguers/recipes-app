@@ -1,0 +1,40 @@
+.footer {
+  align-items: center;
+  background-color: #e5e5e5;
+  bottom: 0;
+  display: flex;
+  height: 20%;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+}
+
+
+.drinkIcon {
+  display: flex;
+}
+
+.mealIcon {
+  display: flex;
+}
+
+.footerContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+button .mealIcon {
+  background-color: #e5e5e5;
+  border: none;
+  height: 90px;
+  width: 100px;
+}
+
+button .drinkIcon {
+  background-color: #e5e5e5;
+  border: none;
+  height: 90px;
+  width: 100px;
+}
